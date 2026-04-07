@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lifemate Tanzania | To Make Your Life Better</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+      --ebony:      #1a1208;
+      --walnut:     #3b2a14;
+      --teak:       #6b4423;
+      --honey:      #c8883a;
+      --gold:       #d4a23a;
+      --champagne:  #f2deb0;
+      --cream:      #faf6ef;
+      --red:        #b01c34;
+      --red-deep:   #7a0f22;
+      --text-dark:  #1a1208;
+      --text-mid:   #4a3520;
+      --text-light: #f2deb0;
+      --wood-grad:  linear-gradient(135deg, #1a1208 0%, #3b2a14 30%, #6b4423 60%, #c8883a 100%);
+      --wood-soft:  linear-gradient(160deg, #3b2a14 0%, #6b4423 40%, #9b6535 70%, #c8883a 100%);
+      --wood-dark:  linear-gradient(180deg, #0d0904 0%, #1a1208 40%, #2e1f0e 100%);
+      --gold-grad:  linear-gradient(90deg, #b8860b, #d4a23a, #f2d080, #d4a23a, #b8860b);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ══════════════════════════════════
+       TOP ANNOUNCEMENT BAR
+    ══════════════════════════════════ */
+    .top-bar {
+      background: var(--wood-grad);
+      color: var(--champagne);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(212,162,58,0.4);
+    }
+    .top-bar span { color: var(--gold); margin: 0 8px; }
+
+    /* ══════════════════════════════════
+       HEADER / NAV
+    ══════════════════════════════════ */
+    header {
+      background: rgba(26,18,8,0.97);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212,162,58,0.25);
+    }
+
+    nav {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-circle {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-image: url('https://i.imgur.com/xODfzhj.png');
+      background-size: cover;
+      background-position: center;
+      border: 2px solid rgba(212,162,58,0.5);
+      box-shadow: 0 0 18px rgba(212,162,58,0.2);
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-text strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--champagne);
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .logo-text small {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(242,222,176,0.8);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: #25D366;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+    }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://i.imgur.com/A4ifhlc.jpeg') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,6,2,0.55) 0%,
+        rgba(26,18,8,0.4) 40%,
+        rgba(10,6,2,0.75) 100%
+      );
+    }
+    /* wood-grain diagonal overlay */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        118deg,
+        rgba(107,68,35,0.18) 0%,
+        transparent 45%,
+        rgba(200,136,58,0.1) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 20px;
+      animation: heroFadeUp 1.2s ease forwards;
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212,162,58,0.15);
+      border: 1px solid rgba(212,162,58,0.5);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(242,222,176,0.85);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: var(--gold-grad);
+      margin: 0 auto 40px;
+    }
+
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary-hero {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--wood-grad);
+      color: var(--champagne);
+      border: 1px solid rgba(212,162,58,0.4);
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.35s;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .btn-primary-hero:hover {
+      background: var(--wood-soft);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(200,136,58,0.3);
+    }
+    .btn-outline-hero {
+      display: inline-block;
+      padding: 16px 40px;
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.35s;
+    }
+    .btn-outline-hero:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(242,222,176,0.6);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50%       { opacity: 1;   transform: scaleY(1.15); }
+    }
+
+    /* ══════════════════════════════════
+       STATS STRIP
+    ══════════════════════════════════ */
+    .stats-strip {
+      background: var(--wood-dark);
+      border-top: 1px solid rgba(212,162,58,0.2);
+      border-bottom: 1px solid rgba(212,162,58,0.2);
+      padding: 40px 20px;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid rgba(212,162,58,0.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      color: rgba(242,222,176,0.65);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════
+       SECTION BASICS
+    ══════════════════════════════════ */
+    .section-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 100px 40px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--teak);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold-grad);
+      margin: 20px auto 0;
+    }
+
+    /* ══════════════════════════════════
+       ROOMS GRID
+    ══════════════════════════════════ */
+    #shop { background: var(--cream); }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+
+    .room-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      /* group: true; - Invalid CSS property removed */
+    }
+    .room-card:first-child {
+      grid-column: 1 / 3;
+    }
+    .room-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .room-card:first-child img { height: 460px; }
+    .room-card:hover img { transform: scale(1.06); }
+
+    .room-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10,6,2,0.85) 0%,
+        rgba(26,18,8,0.3) 50%,
+        transparent 100%
+      );
+      transition: background 0.4s;
+    }
+    .room-card:hover .room-card-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(10,6,2,0.9) 0%,
+        rgba(26,18,8,0.5) 60%,
+        rgba(107,68,35,0.2) 100%
+      );
+    }
+
+    .room-card-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px;
+    }
+    .room-card-tag {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .room-card-info h3 {
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .room-card-info p {
+      color: rgba(242,222,176,0.7);
+      font-size: 14px;
+      max-width: 300px;
+    }
+    .room-card-arrow {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(212,162,58,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+    }
+    .room-card:hover .room-card-arrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════════
+       FEATURED PRODUCTS
+    ══════════════════════════════════ */
+    .products-section {
+      background: linear-gradient(180deg, #f0e8d8 0%, #faf6ef 100%);
+      position: relative;
+    }
+    .products-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--wood-grad);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(59,42,20,0.08);
+      transition: all 0.4s;
+      border: 1px solid rgba(200,136,58,0.1);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(59,42,20,0.18);
+      border-color: rgba(200,136,58,0.3);
+    }
+
+    .product-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+
+    .product-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--red);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .product-info {
+      padding: 20px 22px 24px;
+    }
+    .product-info h4 {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .product-info p {
+      font-size: 13px;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+    }
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teak);
+    }
+    .product-price small {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: #999;
+      margin-right: 4px;
+    }
+
+    /* ══════════════════════════════════
+       SHOWROOM SECTION
+    ══════════════════════════════════ */
+    #showroom {
+      background: var(--wood-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #showroom::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(118deg, rgba(107,68,35,0.25) 0%, transparent 60%);
+    }
+
+    .showroom-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showroom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .showroom-img-stack {
+      position: relative;
+    }
+    .showroom-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      border: 1px solid rgba(212,162,58,0.2);
+    }
+    .showroom-img-accent {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 3px solid var(--ebony);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .showroom-tag {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: rgba(26,18,8,0.85);
+      border: 1px solid rgba(212,162,58,0.4);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .showroom-content .section-eyebrow { color: var(--honey); }
+    .showroom-content .section-title { color: var(--champagne); }
+    .showroom-content .section-rule { margin: 20px 0 32px; }
+
+    .showroom-content p {
+      color: rgba(242,222,176,0.72);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .showroom-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .detail-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,162,58,0.15);
+      padding: 18px 20px;
+      border-radius: 4px;
+    }
+    .detail-item-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .detail-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .detail-item span {
+      color: rgba(242,222,176,0.75);
+      font-size: 14px;
+    }
+
+    .btn-showroom {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 36px;
+      background: transparent;
+      border: 1px solid rgba(212,162,58,0.6);
+      color: var(--gold);
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.35s;
+    }
+    .btn-showroom:hover {
+      background: rgba(212,162,58,0.12);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ══════════════════════════════════
+       LEGACY SECTION
+    ══════════════════════════════════ */
+    #legacy {
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    #legacy::before {
+      content: 'LIFEMATE';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 700;
+      color: rgba(59,42,20,0.04);
+      letter-spacing: 20px;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .legacy-intro {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+    .legacy-intro p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: var(--text-mid);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto 80px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 15%, var(--gold) 85%, transparent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 4px var(--cream), 0 0 0 5px rgba(212,162,58,0.4);
+    }
+
+    .timeline-item:nth-child(odd) .tl-content { grid-column: 1; text-align: right; }
+    .timeline-item:nth-child(odd) .tl-year    { grid-column: 2; justify-self: start; }
+    .timeline-item:nth-child(even) .tl-content { grid-column: 2; grid-row: 1; text-align: left; }
+    .timeline-item:nth-child(even) .tl-year    { grid-column: 1; grid-row: 1; justify-self: end; text-align: right; }
+
+    .tl-year {
+      display: flex;
+      align-items: center;
+      padding-top: 8px;
+    }
+    .tl-year span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--wood-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .tl-content {
+      padding-top: 4px;
+    }
+    .tl-content h4 {
+      font-size: 1.35rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .tl-content p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* achievement pillars */
+    .legacy-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 80px;
+    }
+    .pillar-card {
+      background: white;
+      border: 1px solid rgba(200,136,58,0.15);
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--teak), var(--gold)) 1 0 0 0;
+      padding: 36px 30px;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(59,42,20,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(59,42,20,0.14);
+    }
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, var(--walnut), var(--teak));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .pillar-card h4 {
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════
+       CONTACT / EMAIL SECTION
+    ══════════════════════════════════ */
+    #contact {
+      background: linear-gradient(160deg, var(--walnut) 0%, var(--ebony) 50%, #0d0904 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,136,58,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-left .section-eyebrow { color: var(--honey); }
+    .contact-left .section-title { color: var(--champagne); font-size: 2.8rem; }
+    .contact-left .section-rule { margin: 20px 0 32px; }
+
+    .contact-left p {
+      color: rgba(242,222,176,0.65);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-channel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,162,58,0.15);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .contact-channel:hover {
+      background: rgba(212,162,58,0.08);
+      border-color: rgba(212,162,58,0.4);
+      transform: translateX(4px);
+    }
+    .cc-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .cc-icon.wa  { background: rgba(37,211,102,0.15); }
+    .cc-icon.ig  { background: rgba(225,48,108,0.15); }
+    .cc-icon.fb  { background: rgba(66,103,178,0.15); }
+    .cc-icon.ph  { background: rgba(200,136,58,0.15); }
+
+    .cc-text strong {
+      display: block;
+      color: var(--champagne);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+    .cc-text span {
+      color: rgba(242,222,176,0.55);
+      font-size: 13px;
+    }
+
+    /* Social Icons Row */
+    .social-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .social-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,162,58,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-decoration: none;
+      color: var(--champagne);
+      transition: all 0.3s;
+    }
+    .social-icon:hover {
+      border-color: var(--gold);
+      background: rgba(212,162,58,0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Email Form */
+    .contact-form-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,162,58,0.2);
+      border-radius: 6px;
+      padding: 44px 40px;
+      backdrop-filter: blur(10px);
+    }
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--champagne);
+      margin-bottom: 6px;
+    }
+    .form-sub {
+      font-size: 13px;
+      color: rgba(242,222,176,0.5);
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(212,162,58,0.8);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212,162,58,0.2);
+      border-radius: 4px;
+      padding: 13px 16px;
+      color: var(--champagne);
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(242,222,176,0.3);
+    }
+    .form-group select option { background: var(--walnut); color: var(--champagne); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(212,162,58,0.6);
+      background: rgba(255,255,255,0.07);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .btn-send {
+      width: 100%;
+      padding: 16px;
+      background: var(--wood-soft);
+      color: var(--champagne);
+      border: none;
+      border-radius: 50px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.35s;
+      margin-top: 8px;
+      border: 1px solid rgba(212,162,58,0.3);
+    }
+    .btn-send:hover {
+      background: linear-gradient(160deg, var(--teak) 0%, var(--honey) 100%);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(200,136,58,0.25);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(242,222,176,0.35);
+      margin-top: 16px;
+    }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    footer {
+      background: #0d0904;
+      border-top: 1px solid rgba(212,162,58,0.15);
+      padding: 60px 40px 36px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(212,162,58,0.1);
+      margin-bottom: 36px;
+    }
+
+    .footer-brand {
+      /* Footer brand styles - to be added if needed */
+    }
+    .footer-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .footer-logo-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-image: url('https://i.imgur.com/xODfzhj.png');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(212,162,58,0.35);
+    }
+    .footer-logo-text strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--champagne);
+      display: block;
+    }
+    .footer-logo-text small {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(242,222,176,0.5);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(212,162,58,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-decoration: none;
+      color: rgba(242,222,176,0.6);
+      transition: all 0.3s;
+    }
+    .footer-social a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212,162,58,0.08);
+    }
+
+    .footer-col h5 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: rgba(242,222,176,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-col ul li a:hover { color: var(--champagne); }
+
+    .footer-contact-list { list-style: none; }
+    .footer-contact-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: rgba(242,222,176,0.5);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .footer-contact-list li span:first-child { flex-shrink: 0; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(242,222,176,0.3);
+      letter-spacing: 0.5px;
+    }
+    .footer-gold-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      background: var(--gold-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ══════════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      z-index: 998;
+      transition: all 0.3s;
+      animation: waPulse 3s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.55); }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+      50%       { box-shadow: 0 6px 24px rgba(37,211,102,0.45), 0 0 0 10px rgba(37,211,102,0.1); }
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .rooms-grid { grid-template-columns: 1fr 1fr; }
+      .room-card:first-child { grid-column: 1 / 3; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .showroom-grid { grid-template-columns: 1fr; gap: 40px; }
+      .showroom-img-main { height: 380px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      nav { padding: 0 20px; }
+      .section-wrap { padding: 70px 20px; }
+      .hero h1 { font-size: 2.5rem; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .room-card:first-child { grid-column: 1; }
+      .products-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(212,162,58,0.1); }
+      .timeline::before { left: 0; }
+      .timeline-item { grid-template-columns: 1fr; padding-left: 30px; }
+      .timeline-item::before { left: 0; }
+      .timeline-item:nth-child(odd) .tl-content,
+      .timeline-item:nth-child(even) .tl-content { grid-column: 1; text-align: left; grid-row: 2; }
+      .timeline-item:nth-child(odd) .tl-year,
+      .timeline-item:nth-child(even) .tl-year { grid-column: 1; grid-row: 1; text-align: left; justify-self: start; }
+      .legacy-pillars { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 40px; padding: 70px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-bar">
+    Tanzania's Largest Furniture Showroom
+    <span>✦</span>
+    Nyerere Road, Dar es Salaam
+    <span>✦</span>
+    Open Mon – Sat &nbsp;|&nbsp; 8:00 AM – 5:00 PM
+    <span>✦</span>
+    Call: +255 712 250 090
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <div class="logo-circle"></div>
+        <div class="logo-text">
+          <strong>Lifemate Tanzania</strong>
+          <small>Premium Furniture &amp; Interiors</small>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Living Room</a></li>
+        <li><a href="#shop">Dining</a></li>
+        <li><a href="#shop">Kitchen</a></li>
+        <li><a href="#shop">Office</a></li>
+        <li><a href="#showroom">Showroom</a></li>
+        <li><a href="#legacy">Our Legacy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/255712250090" class="btn-wa" target="_blank">
+          💬 WhatsApp Us
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🪵 &nbsp; Est. 2002 · Part of the Lifemate Group</div>
+      <h1>Crafted to<br><em>Elevate Your Home</em></h1>
+      <div class="hero-sub">Premium Furniture &amp; Interior Solutions</div>
+      <div class="hero-divider"></div>
+      <div class="hero-btns">
+        <a href="#shop" class="btn-primary-hero">Explore Collection</a>
+        <a href="#showroom" class="btn-outline-hero">Visit Showroom</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">140K</div>
+        <div class="stat-label">Instagram Followers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3,000+</div>
+        <div class="stat-label">Staff Worldwide</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">African Countries</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SHOP BY ROOM ── -->
+  <section id="shop">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">Curated Collections</span>
+        <h2 class="section-title">Shop by Room</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="rooms-grid">
+
+        <div class="room-card">
+          <img src="https://i.imgur.com/7uMD4kF.jpeg" alt="Living Room">
+          <div class="room-card-overlay"></div>
+          <div class="room-card-info">
+            <div class="room-card-tag">Lounge &amp; Relaxation</div>
+            <h3>Living Room</h3>
+            <p>Plush fabric sofas, recliners &amp; statement lounge sets for every home</p>
+          </div>
+          <div class="room-card-arrow">→</div>
+        </div>
+
+        <div class="room-card">
+          <img src="https://i.imgur.com/Thfm6i3.jpeg" alt="Dining">
+          <div class="room-card-overlay"></div>
+          <div class="room-card-info">
+            <div class="room-card-tag">Gather Together</div>
+            <h3>Dining Room</h3>
+            <p>Elegant 6-seater sets in marble &amp; premium finishes</p>
+          </div>
+          <div class="room-card-arrow">→</div>
+        </div>
+
+        <div class="room-card">
+          <img src="https://i.imgur.com/i3YbPVI.jpeg" alt="Kitchen">
+          <div class="room-card-overlay"></div>
+          <div class="room-card-info">
+            <div class="room-card-tag">The Heart of the Home</div>
+            <h3>Kitchen Cabinets</h3>
+            <p>High-gloss modern cabinetry &amp; bespoke storage solutions</p>
+          </div>
+          <div class="room-card-arrow">→</div>
+        </div>
+
+        <div class="room-card">
+          <img src="https://i.imgur.com/oPCOYYO.jpeg" alt="Office">
+          <div class="room-card-overlay"></div>
+          <div class="room-card-info">
+            <div class="room-card-tag">Work in Style</div>
+            <h3>Office &amp; Accent</h3>
+            <p>Ergonomic executive chairs, desks &amp; statement accent pieces</p>
+          </div>
+          <div class="room-card-arrow">→</div>
+        </div>
+
+        <div class="room-card">
+          <img src="https://i.imgur.com/OTL7ybU.jpeg" alt="Entertainment">
+          <div class="room-card-overlay"></div>
+          <div class="room-card-info">
+            <div class="room-card-tag">Entertain with Elegance</div>
+            <h3>TV &amp; Entertainment</h3>
+            <p>Marble-effect wall units &amp; dark wood entertainment centres</p>
+          </div>
+          <div class="room-card-arrow">→</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PRODUCTS ── -->
+  <section class="products-section">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">Bestsellers</span>
+        <h2 class="section-title">Featured Pieces</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://i.imgur.com/StYlRe1.jpeg" alt="Grey Sofa">
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-info">
+            <h4>Plush Grey Fabric Sofa Set</h4>
+            <p>Moisture-resistant · Tailored for Tanzania's climate</p>
+            <div class="product-price"><small>From</small> TZS 2,850,000</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://i.imgur.com/oPCOYYO.jpeg" alt="Office Chair">
+          </div>
+          <div class="product-info">
+            <h4>Executive White Swivel Chair</h4>
+            <p>Ergonomic design with polished chrome base</p>
+            <div class="product-price"><small>From</small> TZS 850,000</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://i.imgur.com/ipoGVGq.jpeg" alt="Marble Dining">
+            <div class="product-badge">New In</div>
+          </div>
+          <div class="product-info">
+            <h4>White Marble Oval Dining Set</h4>
+            <p>6 upholstered chairs · Premium marble-look surface</p>
+            <div class="product-price"><small>From</small> TZS 3,950,000</div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://i.imgur.com/i3YbPVI.jpeg" alt="Kitchen">
+          </div>
+          <div class="product-info">
+            <h4>Contemporary High-Gloss Kitchen Set</h4>
+            <p>Sleek marble countertop · Bespoke sizing available</p>
+            <div class="product-price"><small>From</small> TZS 5,200,000</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SHOWROOM ── -->
+  <section id="showroom">
+    <div class="showroom-inner">
+      <div class="showroom-grid">
+
+        <div class="showroom-img-stack">
+          <img src="https://i.imgur.com/A4ifhlc.jpeg" alt="Lifemate Showroom" class="showroom-img-main">
+          <img src="https://i.imgur.com/7uMD4kF.jpeg" alt="Showroom Interior" class="showroom-img-accent">
+          <div class="showroom-tag">Tanzania's Largest Showroom</div>
+        </div>
+
+        <div class="showroom-content">
+          <span class="section-eyebrow">Experience In Person</span>
+          <h2 class="section-title">Our Flagship Showroom</h2>
+          <div class="section-rule"></div>
+          <p>
+            Walk through Tanzania's most spectacular furniture showroom on Nyerere Road and touch the craftsmanship for yourself. Every piece you see on this page can be experienced in-person — feel the fabric, test the comfort, and consult with our expert interior advisors.
+          </p>
+          <p>
+            Our 140,000+ Instagram followers trust us because quality speaks. Come and see why Dar es Salaam's finest homes are furnished by Lifemate.
+          </p>
+
+          <div class="showroom-details">
+            <div class="detail-item">
+              <div class="detail-item-icon">📍</div>
+              <strong>Address</strong>
+              <span>Plot No. 21, Block 20, Nyerere Road, Dar es Salaam</span>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item-icon">🕐</div>
+              <strong>Opening Hours</strong>
+              <span>Mon – Sat: 8:00 AM – 5:00 PM · Sunday: Closed</span>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item-icon">📞</div>
+              <strong>Call Us</strong>
+              <span>+255 712 250 090<br>+255 740 181 273<br>+255 657 662 255</span>
+            </div>
+            <div class="detail-item">
+              <div class="detail-item-icon">📦</div>
+              <strong>Delivery</strong>
+              <span>We deliver across Dar es Salaam &amp; upcountry Tanzania</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/255712250090" class="btn-showroom" target="_blank">
+            💬 &nbsp; Book a Showroom Visit
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEGACY SECTION ── -->
+  <section id="legacy">
+    <div class="section-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">A Legacy Built on Craftsmanship</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="legacy-intro">
+        <p>
+          What began as a bold vision in Lagos, Nigeria in 2002 has grown into Africa's most recognised furniture group — stretching across 10+ countries, employing over 3,000 people worldwide, and transforming more than a million African homes. Lifemate Tanzania stands proudly at the heart of this story, bringing world-class Italian-inspired design to the Tanzanian people.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="tl-content">
+            <h4>The Foundation</h4>
+            <p>Lifemate Group is founded in Lagos, Nigeria under the leadership of Chairman Mr. Chi Quan — with a mission to bring quality, affordable furniture to the African continent. Three core businesses are established: Furniture Products, Hardware & Machinery, and Architectural Designs.</p>
+          </div>
+          <div class="tl-year"><span>2002</span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-content">
+            <h4>Pan-African Expansion</h4>
+            <p>Lifemate opens showrooms across West and Central Africa — Ghana, Cameroon, Gabon — becoming the go-to premium furniture brand for Africa's growing middle class. With production centers in Hong Kong, Foshan, and Dalian, China, supply chain quality reaches international standards.</p>
+          </div>
+          <div class="tl-year"><span>2010s</span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-content">
+            <h4>Arrival in Tanzania</h4>
+            <p>Lifemate opens its Tanzanian flagship on Nyerere Road, Dar es Salaam — the largest furniture showroom in the country. Tanzanians immediately embrace the brand's signature blend of modern design, durability, and unmatched value for money.</p>
+          </div>
+          <div class="tl-year"><span>2015</span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-content">
+            <h4>Digital Community &amp; Growth</h4>
+            <p>@lifematetz reaches 140,000 followers on Instagram — one of Tanzania's largest furniture brand audiences — proving that exceptional product quality and genuine customer care translate seamlessly into digital loyalty. The showroom becomes a Dar es Salaam landmark.</p>
+          </div>
+          <div class="tl-year"><span>Today</span></div>
+        </div>
+
+      </div>
+
+      <!-- Pillars -->
+      <div class="legacy-pillars">
+        <div class="pillar-card">
+          <div class="pillar-icon">🌍</div>
+          <h4>African-First Vision</h4>
+          <p>Every design decision is made with the African home in mind — our furniture is built to thrive in our climate, our culture, and our lifestyle. We are proudly headquartered in Africa for Africa.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🪵</div>
+          <h4>Italian Design, Global Quality</h4>
+          <p>Lifemate products draw inspiration from Italian design philosophy, manufactured to exacting standards with production facilities in China and quality control that meets international benchmarks.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🏆</div>
+          <h4>Tanzania's #1 Showroom</h4>
+          <p>With the largest furniture showroom on Nyerere Road, Dar es Salaam, Lifemate Tanzania offers an unmatched one-stop experience — from living room to kitchen, bedroom to office, all under one roof.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🤝</div>
+          <h4>Community &amp; Trust</h4>
+          <p>Over 140,000 Tanzanians follow our journey on Instagram. Our repeat customers, glowing reviews, and word-of-mouth reputation reflect a brand that consistently delivers on its promise.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">📦</div>
+          <h4>Complete Home Solutions</h4>
+          <p>We don't just sell furniture — we deliver complete living experiences. From custom kitchen cabinetry to full home decoration projects, Lifemate Tanzania is your end-to-end interiors partner.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🌱</div>
+          <h4>3,000+ Employees Worldwide</h4>
+          <p>Lifemate Group employs over 3,000 dedicated professionals across China and Africa — a testament to a company that not only furnishes homes but also builds livelihoods across the continent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / EMAIL ── -->
+  <section id="contact">
+    <div class="contact-wrap">
+
+      <!-- Left Column -->
+      <div class="contact-left">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="section-title">Let's Make Your<br>Home Better</h2>
+        <div class="section-rule" style="margin:20px 0 32px;"></div>
+        <p>
+          Whether you're furnishing a new home, upgrading your office, or planning a complete renovation — our team is ready to guide you. Reach out via WhatsApp, visit us in Dar es Salaam, or send us an email and we'll respond promptly.
+        </p>
+
+        <div class="contact-channels">
+          <a href="https://wa.me/255712250090" class="contact-channel" target="_blank">
+            <div class="cc-icon wa"><i class="fab fa-whatsapp"></i></div>
+            <div class="cc-text">
+              <strong>WhatsApp (Primary)</strong>
+              <span>+255 712 250 090</span>
+            </div>
+          </a>
+          <a href="https://wa.me/255740181273" class="contact-channel" target="_blank">
+            <div class="cc-icon wa"><i class="fab fa-whatsapp"></i></div>
+            <div class="cc-text">
+              <strong>WhatsApp (Sales)</strong>
+              <span>+255 740 181 273</span>
+            </div>
+          </a>
+          <a href="https://wa.me/255657662255" class="contact-channel" target="_blank">
+            <div class="cc-icon wa"><i class="fab fa-whatsapp"></i></div>
+            <div class="cc-text">
+              <strong>WhatsApp (General)</strong>
+              <span>+255 657 662 255</span>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/lifematetz/" class="contact-channel" target="_blank">
+            <div class="cc-icon ig"><i class="fab fa-instagram"></i></div>
+            <div class="cc-text">
+              <strong>Instagram</strong>
+              <span>@lifematetz · 140K Followers</span>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/LifemateTanzania/" class="contact-channel" target="_blank">
+            <div class="cc-icon fb"><i class="fab fa-facebook-f"></i></div>
+            <div class="cc-text">
+              <strong>Facebook</strong>
+              <span>Lifemate Furniture Tanzania</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-row">
+          <a href="https://www.instagram.com/lifematetz/" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/LifemateTanzania/" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/255712250090" class="social-icon" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:+255712250090" class="social-icon" title="Call Us">📞</a>
+          <a href="https://www.google.com/maps/search/Lifemate+Furniture+Tanzania+Nyerere+Road" class="social-icon" target="_blank" title="Find Us on Maps">📍</a>
+        </div>
+      </div>
+
+      <!-- Right: Email Form -->
+      <div class="contact-form-box">
+        <div class="form-title">Send Us a Message</div>
+        <div class="form-sub">We'll respond within 24 hours</div>
+
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="fname" placeholder="John Mwangi" required>
+            </div>
+            <div class="form-group">
+              <label>Phone / WhatsApp</label>
+              <input type="tel" id="fphone" placeholder="+255 7XX XXX XXX">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="femail" placeholder="yourname@gmail.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>I'm Interested In</label>
+            <select id="finterest">
+              <option value="">Select a category…</option>
+              <option>Living Room Furniture</option>
+              <option>Dining Room Set</option>
+              <option>Kitchen Cabinets</option>
+              <option>Office Furniture</option>
+              <option>Bedroom Set</option>
+              <option>Full Home Furnishing</option>
+              <option>Custom / Bespoke Order</option>
+              <option>Wholesale / Trade Enquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea id="fmessage" placeholder="Tell us about your space, budget, or any specific pieces you have in mind — we'd love to help you create the perfect home…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-send">✉ &nbsp; Send Message</button>
+          <div class="form-note">Your message will be sent to info@lifematetz.com</div>
+        </form>
+
+        <div id="formSuccess" style="display:none; text-align:center; padding: 40px 20px;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--champagne); margin-bottom:10px;">Message Sent!</div>
+          <p style="color:rgba(242,222,176,0.6); font-size:14px;">Thank you for reaching out. Our team will respond within 24 hours. You can also WhatsApp us for faster service.</p>
+          <a href="https://wa.me/255712250090" style="display:inline-block;margin-top:20px;padding:12px 28px;background:#25D366;color:white;border-radius:50px;text-decoration:none;font-size:13px;font-weight:600;">💬 Continue on WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="footer-logo-circle"></div>
+            <div class="footer-logo-text">
+              <strong>Lifemate Tanzania</strong>
+              <small>To Make Your Life Better</small>
+            </div>
+          </div>
+          <p>Tanzania's leading premium furniture showroom — part of the internationally recognised Lifemate Group, serving Africa with distinction since 2002.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/lifematetz/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/LifemateTanzania/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/255712250090" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+255712250090" title="Call">📞</a>
+            <a href="https://www.google.com/maps/search/Lifemate+Tanzania+Nyerere+Road+Dar+es+Salaam" target="_blank" title="Maps">📍</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Collections</h5>
+          <ul>
+            <li><a href="#shop">Living Room</a></li>
+            <li><a href="#shop">Dining Room</a></li>
+            <li><a href="#shop">Kitchen Cabinets</a></li>
+            <li><a href="#shop">Office Furniture</a></li>
+            <li><a href="#shop">TV &amp; Entertainment</a></li>
+            <li><a href="#shop">Bedroom Sets</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul class="footer-contact-list">
+            <li><span>📍</span><span>Plot No. 21, Block 20, Nyerere Road, P.O. Box 70145, Dar es Salaam</span></li>
+            <li><span>📞</span><span>+255 712 250 090<br>+255 740 181 273<br>+255 657 662 255</span></li>
+            <li><span>🕐</span><span>Mon – Sat · 8:00 AM – 5:00 PM</span></li>
+            <li><span>📧</span><span>info@lifematetz.com</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Lifemate Furniture Tanzania · Part of the Lifemate Group · All rights reserved</div>
+        <div class="footer-gold-text">To Make Your Life Better…</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255712250090" class="wa-float" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    // Form handler – opens mailto with pre-filled content
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name     = document.getElementById('fname').value;
+      const phone    = document.getElementById('fphone').value;
+      const email    = document.getElementById('femail').value;
+      const interest = document.getElementById('finterest').value;
+      const message  = document.getElementById('fmessage').value;
+
+      const subject  = encodeURIComponent(`Furniture Enquiry from ${name} – ${interest || 'General'}`);
+      const body     = encodeURIComponent(
+        `Hello Lifemate Tanzania,\n\nMy name is ${name}.\nPhone/WhatsApp: ${phone || 'Not provided'}\nEmail: ${email}\nInterested In: ${interest || 'General Enquiry'}\n\nMessage:\n${message}\n\n---\nSent via lifematetz.com`
+      );
+
+      window.location.href = `mailto:info@lifematetz.com?subject=${subject}&body=${body}`;
+
+      // Show success message
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    // Smooth reveal on scroll
+    const revealEls = document.querySelectorAll('.room-card, .product-card, .pillar-card, .stat-item, .timeline-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = entry.target.classList.contains('pillar-card') ? 'translateY(0)' : '';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      if (el.classList.contains('pillar-card')) el.style.transform = 'translateY(24px)';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
